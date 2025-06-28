@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Function Tasks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f2f2f2;
+    }
+    h2 {
+      color: #333;
+    }
+    .output {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-left: 4px solid #2196F3;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    code {
+      background-color: #e6f7ff;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Functions Output</h1>
+
+  <div class="output" id="task1"></div>
+  <div class="output" id="task2"></div>
+  <div class="output" id="task3"></div>
+  <div class="output" id="task4"></div>
+  <div class="output" id="task5"></div>
+
+  <script>
+    // Task 1: Filter out negative numbers
+    function filterNegativeNumbers(arr) {
+      return arr.filter(num => num >= 0);
+    }
+
+    const nums1 = [-5, 3, -1, 0, 8, -2];
+    const result1 = filterNegativeNumbers(nums1);
+    document.getElementById("task1").innerHTML = `<h2>1. Filter Negative Numbers</h2><p>Input: ${nums1}</p><p>Output: ${result1}</p>`;
+    console.log("1. Filter Negative Numbers\nInput:", nums1, "\nOutput:", result1);
+
+    // Task 2: Difference from 13 with conditions
+    function diffFrom13(num) {
+      const diff = Math.abs(num - 13);
+      return num > 13 ? 2 * diff : diff;
+    }
+
+    const num2 = 20;
+    const result2 = diffFrom13(num2);
+    document.getElementById("task2").innerHTML = `<h2>2. Difference from 13</h2><p>Input: ${num2}</p><p>Output: ${result2}</p>`;
+    console.log("2. Difference from 13\nInput:", num2, "\nOutput:", result2);
+
+    // Task 3: Fibonacci series
+    function fibonacci(n) {
+      const series = [0, 1];
+      for (let i = 2; i < n; i++) {
+        series.push(series[i - 1] + series[i - 2]);
+      }
+      return series.slice(0, n);
+    }
+
+    const fibCount = 10;
+    const result3 = fibonacci(fibCount);
+    document.getElementById("task3").innerHTML = `<h2>3. Fibonacci Series</h2><p>First ${fibCount} terms: ${result3}</p>`;
+    console.log("3. Fibonacci Series\nFirst", fibCount, "terms:", result3);
+
+    // Task 4: Sum of multiples of 3 and 5 under 1000
+    function sumMultiplesOf3And5(limit) {
+      let sum = 0;
+      for (let i = 0; i < limit; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
+          sum += i;
+        }
+      }
+      return sum;
+    }
+
+    const limit4 = 1000;
+    const result4 = sumMultiplesOf3And5(limit4);
+    document.getElementById("task4").innerHTML = `<h2>4. Sum of Multiples of 3 and 5 Under 1000</h2><p>Output: ${result4}</p>`;
+    console.log("4. Sum of Multiples of 3 and 5 Under 1000\nOutput:", result4);
+
+    // Task 5: Cube of number using function object
+    const cubeFunction = new Function("num", "return num * num * num;");
+    const num5 = 5;
+    const result5 = cubeFunction(num5);
+    document.getElementById("task5").innerHTML = `<h2>5. Cube of Number Using Function Object</h2><p>Input: ${num5}</p><p>Output: ${result5}</p>`;
+    console.log("5. Cube of Number Using Function Object\nInput:", num5, "\nOutput:", result5);
+  </script>
+
+</body>
+</html>
